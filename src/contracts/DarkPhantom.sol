@@ -2,10 +2,10 @@
 
 pragma solidity ^0.8.0;
 
-import './ERC721Connector.sol';
+import './ERC721/ERC721Connector.sol';
 
 
-contract DarkPhantom is ERC721Connector{
+contract DarkPhantom is ERC721Connector {
 
     // Array to store our NFTs
     string[] public darkPhantomz;
