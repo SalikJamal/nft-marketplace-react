@@ -2,15 +2,15 @@
 
 pragma solidity ^0.8.0;
 
+import './ERC721Connector.sol';
 
-contract DarkPhantom {
 
-    string public name;
-    string public symbol;
+contract DarkPhantom is ERC721Connector{
 
-    constructor() {
-        name = "Dark Phantom";
-        symbol = "DPhantomz";
-    }
+    // First Exercise - Initialize this contract to inherit
+    // Name and symbol from ERC721Metadat so that
+    // The name is DarkPhantom and the symbol is DPhantomz
+
+    constructor() ERC721Connector("DarkPhantom", "DPhantomz") {}
 
 }
