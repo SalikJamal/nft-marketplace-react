@@ -3,9 +3,9 @@
 pragma solidity ^0.8.0;
 
 import './ERC721Metadata.sol';
+import './ERC721.sol';
 
-
-contract ERC721Connector is ERC71Metadata {
+contract ERC721Connector is ERC71Metadata, ERC721 {
 
 
     // We deploy connector right away
