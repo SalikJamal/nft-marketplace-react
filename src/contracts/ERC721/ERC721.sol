@@ -37,7 +37,7 @@ contract ERC721 {
 
     event Transfer(address indexed _from, address indexed _to, uint indexed tokenId);
 
-    function _mint(address _to, uint _tokenId) internal {
+    function _mint(address _to, uint _tokenId) internal virtual {
         
         require(_to != address(0), "ERC721: Minting to the zero address"); // Requires that the address isn't invalid
         require(!_tokenExists(_tokenId), "ERC721: Token already minted"); // Requires that the token doesn't already exist
