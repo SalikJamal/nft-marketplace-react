@@ -39,6 +39,7 @@ contract ERC721 {
     mapping(uint => address) private tokenApprovals; 
 
     event Transfer(address indexed _from, address indexed _to, uint indexed tokenId);
+    event Approval(address indexed owner, address indexed approved, uint indexed tokenId);
 
     function _mint(address _to, uint _tokenId) internal virtual {
         require(_to != address(0), "ERC721: Minting to the zero address"); // Requires that the address isn't invalid
@@ -71,7 +72,31 @@ contract ERC721 {
     }
 
     function transferFrom(address _from, address _to, uint _tokenId) public {
+        require(isApprovedOrOwner(msg.sender, _tokenId));
         _transferFrom(_from, _to, _tokenId);
+    }
+
+    /// @notice Change or reaffirm the approved address for an NFT
+    /// @dev The zero address indicates there is no approved address.
+    /// Throws unless `msg.sender` is the current NFT owner, or an authorized
+    /// operator of the current owner.
+    /// @param _to The new approved NFT controller
+    /// @param _tokenId The NFT to approve
+    function approve(address _to, uint _tokenId) public {
+        address owner = ownerOf(_tokenId);
+
+        require(_to != owner, "ERC721: Approval to the current caller!");
+        require(msg.sender == owner, "ERC721: Only owner of the token can approve!");
+
+        tokenApprovals[_tokenId] = _to;
+
+        emit Approval(owner, _to, _tokenId);
+    }
+
+    function isApprovedOrOwner(address _spender, uint _tokenId) internal view returns(bool) {
+        require(_tokenExists(_tokenId), "ERC721: Token does not exist");
+        address owner = ownerOf(_tokenId);
+        return _spender == owner || _spender == tokenApprovals[_tokenId];
     }
 
     /// @notice Count all NFTs assigned to an owner
@@ -79,7 +104,7 @@ contract ERC721 {
     /// @param _owner An address for whom to query the balance
     /// @return The number of NFTs owned by `_owner`, possibly zero
     function balanceOf(address _owner) public view returns(uint) {
-        require(_owner != address(0), "Owner query for non-existant token");
+        require(_owner != address(0), "ERC721: Owner query for non-existant token");
         return ownedTokensCount[_owner];
     }
 
@@ -90,7 +115,7 @@ contract ERC721 {
     /// @return The address of the owner of the NFT
     function ownerOf(uint _tokenId) public view returns (address) {
         address owner = tokenOwners[_tokenId];
-        require(owner != address(0), "Owner query for non-existant token");
+        require(owner != address(0), "ERC721: Owner query for non-existant token");
         return owner;
     }
 
@@ -99,7 +124,5 @@ contract ERC721 {
         address owner = tokenOwners[_tokenId];
         return owner != address(0); // Return truthiness that address is not zero
     }
-
-
 
 }
