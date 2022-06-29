@@ -2,6 +2,8 @@
 
 pragma solidity ^0.8.0;
 
+import "../ERC165/ERC165.sol";
+import "../interfaces/IERC721.sol";
 
 /*
 
@@ -27,7 +29,7 @@ pragma solidity ^0.8.0;
 */
 
 
-contract ERC721 {
+contract ERC721 is ERC165, IERC721 {
 
     // Mapping from tokenId to the owner
     mapping(uint => address) private tokenOwners;
@@ -37,9 +39,15 @@ contract ERC721 {
 
     // Mapping from tokenId to approved addresses
     mapping(uint => address) private tokenApprovals; 
-
-    event Transfer(address indexed _from, address indexed _to, uint indexed tokenId);
-    event Approval(address indexed owner, address indexed approved, uint indexed tokenId);
+    
+    constructor() {
+        _registerInterface(bytes4(
+            keccak256("balanceOf(bytes4)") ^ 
+            keccak256("ownerOf(bytes4)") ^ 
+            keccak256("transferFrom(bytes4)") ^ 
+            keccak256("approve(bytes4)")
+        ));
+    }
 
     function _mint(address _to, uint _tokenId) internal virtual {
         require(_to != address(0), "ERC721: Minting to the zero address"); // Requires that the address isn't invalid
@@ -71,7 +79,7 @@ contract ERC721 {
         emit Transfer(_from, _to, _tokenId); // Emit the Transfer event when transfering token to new address
     }
 
-    function transferFrom(address _from, address _to, uint _tokenId) public {
+    function transferFrom(address _from, address _to, uint _tokenId) override public {
         require(isApprovedOrOwner(msg.sender, _tokenId));
         _transferFrom(_from, _to, _tokenId);
     }
@@ -82,7 +90,7 @@ contract ERC721 {
     /// operator of the current owner.
     /// @param _to The new approved NFT controller
     /// @param _tokenId The NFT to approve
-    function approve(address _to, uint _tokenId) public {
+    function approve(address _to, uint _tokenId) override public {
         address owner = ownerOf(_tokenId);
 
         require(_to != owner, "ERC721: Approval to the current caller!");
@@ -103,7 +111,7 @@ contract ERC721 {
     /// @dev NFTs assigned to the zero address are considered invalid, and this function throws for queries about the zero address.
     /// @param _owner An address for whom to query the balance
     /// @return The number of NFTs owned by `_owner`, possibly zero
-    function balanceOf(address _owner) public view returns(uint) {
+    function balanceOf(address _owner) public override view returns(uint) {
         require(_owner != address(0), "ERC721: Owner query for non-existant token");
         return ownedTokensCount[_owner];
     }
@@ -113,7 +121,7 @@ contract ERC721 {
     /// @dev NFTs assigned to zero address are considered invalid, and queries about them do throw.
     /// @param _tokenId The identifier for an NFT
     /// @return The address of the owner of the NFT
-    function ownerOf(uint _tokenId) public view returns (address) {
+    function ownerOf(uint _tokenId) public override view returns (address) {
         address owner = tokenOwners[_tokenId];
         require(owner != address(0), "ERC721: Owner query for non-existant token");
         return owner;
