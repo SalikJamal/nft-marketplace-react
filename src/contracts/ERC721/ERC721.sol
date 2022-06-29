@@ -3,7 +3,7 @@
 pragma solidity ^0.8.0;
 
 import "../ERC165/ERC165.sol";
-import "../interfaces/IERC721.sol";
+import "../interfaces/ERC721/IERC721.sol";
 
 /*
 

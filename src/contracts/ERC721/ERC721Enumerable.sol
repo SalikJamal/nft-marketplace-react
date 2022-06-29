@@ -3,7 +3,7 @@
 pragma solidity ^0.8.0;
 
 import './ERC721.sol';
-import "../interfaces/IERC721Enumerable.sol";
+import "../interfaces/ERC721/IERC721Enumerable.sol";
 
 
 contract ERC721Enumerable is IERC721Enumerable, ERC721 {

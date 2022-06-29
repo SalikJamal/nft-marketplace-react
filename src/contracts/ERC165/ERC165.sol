@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.0;
 
-import "../interfaces/IERC165.sol";
+import "../interfaces/ERC165/IERC165.sol";
 
 
 contract ERC165 is IERC165 {

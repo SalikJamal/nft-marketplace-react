@@ -28,7 +28,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"_symbol\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"name()\":{\"notice\":\"A descriptive name for a collection of NFTs in this contract\"},\"symbol()\":{\"notice\":\"An abbreviated name for NFTs in this contract\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/interfaces/IERC721Metadata.sol\":\"IERC721Metadata\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/contracts/interfaces/IERC721Metadata.sol\":{\"keccak256\":\"0x70493bde38c7660bb000887a2df396611899143438ed350e5b1bcf6e5b65e7bd\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fd9100b43ef08f95f4fe7bd56290f7262b4ae23cc519c928da93f981a12b6d4e\",\"dweb:/ipfs/QmeQNnAgvmB3FmBQxfpxeJjn5jA7Ws5JFKfPanLGfxjKnb\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"_symbol\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"name()\":{\"notice\":\"A descriptive name for a collection of NFTs in this contract\"},\"symbol()\":{\"notice\":\"An abbreviated name for NFTs in this contract\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/interfaces/ERC721/IERC721Metadata.sol\":\"IERC721Metadata\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/contracts/interfaces/ERC721/IERC721Metadata.sol\":{\"keccak256\":\"0x70493bde38c7660bb000887a2df396611899143438ed350e5b1bcf6e5b65e7bd\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fd9100b43ef08f95f4fe7bd56290f7262b4ae23cc519c928da93f981a12b6d4e\",\"dweb:/ipfs/QmeQNnAgvmB3FmBQxfpxeJjn5jA7Ws5JFKfPanLGfxjKnb\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -37,9 +37,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.0;\r\n\r\n\r\ninterface IERC721Metadata {\r\n\r\n    /// @notice A descriptive name for a collection of NFTs in this contract\r\n    function name() external view returns (string memory _name);\r\n\r\n    /// @notice An abbreviated name for NFTs in this contract\r\n    function symbol() external view returns (string memory _symbol);\r\n\r\n    /// @notice A distinct Uniform Resource Identifier (URI) for a given asset.\r\n    /// @dev Throws if `_tokenId` is not a valid NFT. URIs are defined in RFC\r\n    ///  3986. The URI may point to a JSON file that conforms to the \"ERC721\r\n    ///  Metadata JSON Schema\".\r\n    // function tokenURI(uint _tokenId) external view returns (string memory);\r\n\r\n}",
-  "sourcePath": "D:\\blockchain-learning\\nft-marketplace-react\\src\\contracts\\interfaces\\IERC721Metadata.sol",
+  "sourcePath": "D:\\blockchain-learning\\nft-marketplace-react\\src\\contracts\\interfaces\\ERC721\\IERC721Metadata.sol",
   "ast": {
-    "absolutePath": "project:/src/contracts/interfaces/IERC721Metadata.sol",
+    "absolutePath": "project:/src/contracts/interfaces/ERC721/IERC721Metadata.sol",
     "exportedSymbols": {
       "IERC721Metadata": [
         873
@@ -211,7 +211,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-06-29T16:18:58.745Z",
+  "updatedAt": "2022-06-29T16:26:55.121Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

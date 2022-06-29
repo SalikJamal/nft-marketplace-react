@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.0;
 
-import "../interfaces/IERC721Metadata.sol";
+import "../interfaces/ERC721/IERC721Metadata.sol";
 import "../ERC165/ERC165.sol";
 
 
