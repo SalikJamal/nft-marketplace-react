@@ -55,11 +55,14 @@ contract('DarkPhantom', accounts => {
         // Loop through list and grab DPhantomz from list
         let result = []
         let DarkPhantom
-
-        for(let i = 0; i <= totalSupply; i++) {
-            DarkPhantom = await darkPhantom.darkPhantomz(i)
+        for(let i = 1; i <= totalSupply; i++) {
+            DarkPhantom = await darkPhantom.darkPhantomz(i - 1)
             result.push(DarkPhantom)
         }
+
+        // Assert that our new array result will equal our expected result
+        let expected = ['https...1','https...2','https...3','https...4']
+        assert.equal(result.join(','), expected.join(','), 'The DPhantomz don\'t match')
         
     })
 
