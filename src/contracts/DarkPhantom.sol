@@ -15,7 +15,7 @@ contract DarkPhantom is ERC721Connector {
     // Name and symbol from ERC721Metadat so that
     // The name is DarkPhantom and the symbol is DPhantomz
 
-    constructor() ERC721Connector("DarkPhantom", "DPhantomz") {}
+    constructor() ERC721Connector("DarkPhantom", "DPHANTOMZ") {}
 
     function mint(string memory _darkPhantom) public {
         
