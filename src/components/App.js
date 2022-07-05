@@ -123,17 +123,3 @@ const App = () => {
 
 
 export default App
-
-/*
-<img src="https://i.ibb.co/jWg9Mg4/k1.png" alt="k1" border="0">
-<img src="https://i.ibb.co/sPJzPYq/k2.png" alt="k2" border="0">
-<img src="https://i.ibb.co/W26K7n5/k3.png" alt="k3" border="0">
-<img src="https://i.ibb.co/L1g7kPC/k4.png" alt="k4" border="0">
-<img src="https://i.ibb.co/rcZZbKk/k5.png" alt="k5" border="0">
-<a href="https://imgbb.com/"><img src="https://i.ibb.co/G2DMgH6/k6.png" alt="k6" border="0">
-<img src="https://i.ibb.co/v1Ybkjf/k7.png" alt="k7" border="0">
-<img src="https://i.ibb.co/4PnpwhF/k8.png" alt="k8" border="0">
-<img src="https://i.ibb.co/hfr8MW7/k9.png" alt="k9" border="0">
-<img src="https://i.ibb.co/SVRjDFs/k10.png" alt="k10" border="0">
-<img src="https://i.ibb.co/6tDXBm9/k11.png" alt="k11" border="0">
- */

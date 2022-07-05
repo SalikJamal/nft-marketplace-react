@@ -35,15 +35,15 @@
     "absolutePath": "project:/src/contracts/interfaces/ERC165/IERC165.sol",
     "exportedSymbols": {
       "IERC165": [
-        776
+        787
       ]
     },
-    "id": 777,
+    "id": 788,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 767,
+        "id": 778,
         "literals": [
           "solidity",
           ">=",
@@ -63,9 +63,9 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 776,
+        "id": 787,
         "linearizedBaseContracts": [
-          776
+          787
         ],
         "name": "IERC165",
         "nameLocation": "84:7:7",
@@ -73,13 +73,13 @@
         "nodes": [
           {
             "documentation": {
-              "id": 768,
+              "id": 779,
               "nodeType": "StructuredDocumentation",
               "src": "101:378:7",
               "text": "@notice Query if a contract implements an interface\n @param interfaceID The interface identifier, as specified in ERC-165\n @dev Interface identification is specified in ERC-165. This function\n  uses less than 30,000 gas.\n @return `true` if the contract implements `interfaceID` and\n  `interfaceID` is not 0xffffffff, `false` otherwise"
             },
             "functionSelector": "01ffc9a7",
-            "id": 775,
+            "id": 786,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -87,17 +87,17 @@
             "nameLocation": "494:17:7",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 771,
+              "id": 782,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 770,
+                  "id": 781,
                   "mutability": "mutable",
                   "name": "interfaceID",
                   "nameLocation": "519:11:7",
                   "nodeType": "VariableDeclaration",
-                  "scope": 775,
+                  "scope": 786,
                   "src": "512:18:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -106,7 +106,7 @@
                     "typeString": "bytes4"
                   },
                   "typeName": {
-                    "id": 769,
+                    "id": 780,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
                     "src": "512:6:7",
@@ -121,17 +121,17 @@
               "src": "511:20:7"
             },
             "returnParameters": {
-              "id": 774,
+              "id": 785,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 773,
+                  "id": 784,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 775,
+                  "scope": 786,
                   "src": "555:4:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -140,7 +140,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 772,
+                    "id": 783,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "555:4:7",
@@ -154,14 +154,14 @@
               ],
               "src": "554:6:7"
             },
-            "scope": 776,
+            "scope": 787,
             "src": "485:76:7",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 777,
+        "scope": 788,
         "src": "74:492:7",
         "usedErrors": []
       }
@@ -174,7 +174,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-07-05T10:29:34.127Z",
+  "updatedAt": "2022-07-05T16:27:28.721Z",
   "devdoc": {
     "kind": "dev",
     "methods": {
